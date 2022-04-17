@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <Spinner
+        android:id="@+id/spinner"
+        android:entries="@array/maptype_array"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnLocate"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Locate yourself"
+            map:layout_constraintStart_toStartOf="@+id/map"
+            map:layout_constraintTop_toTopOf="@+id/map" />
+
+        <Button
+            android:id="@+id/btnZoomin"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Zoom in"
+            map:layout_constraintStart_toStartOf="@+id/btnLocate"
+            map:layout_constraintTop_toBottomOf="@+id/btnLocate" />
+
+
+        <Button
+            android:id="@+id/btnZoomout"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Zoom out"
+            map:layout_constraintStart_toStartOf="@+id/btnZoomin"
+            map:layout_constraintTop_toBottomOf="@+id/btnZoomin" />
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            map:layout_constraintBottom_toBottomOf="parent"
+            map:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintTop_toTopOf="parent"
+            tools:context=".MapsActivity" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
